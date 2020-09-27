@@ -6,10 +6,32 @@ namespace EmployeeWages
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == 1) Console.WriteLine("employee is present");
-            else Console.WriteLine("employee is absent");
+            int IS_FULL_TIME = 2;
+            int EMP_RATE_PER_HOUR = 20;
+            int empHrs = 0;
+            int empWage = 0;
+
+            for (int i = 0; i < 20; i++)
+            {
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
+                switch (empCheck)
+                {
+                    case 0:
+                        empHrs = 0;
+                        break;
+                    case 1:
+                        empHrs = 4;
+                        break;
+                    case 2:
+                        empHrs = 8;
+                        break;
+                }
+
+                empWage += empHrs * EMP_RATE_PER_HOUR;
+            }
+            Console.WriteLine("Emp Wage: " + empWage);
+
         }
     }
 }
