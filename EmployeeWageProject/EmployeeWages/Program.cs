@@ -6,40 +6,44 @@ namespace EmployeeWages
     {
         static void Main(string[] args)
         {
-            int IS_FULL_TIME = 2;
+            Console.WriteLine("employee wage" + MaximumWageComputation());
+        }
+
+        static int MaximumWageComputation() 
+        {
+            int IS_FULL_TIME = 0;
             int EMP_RATE_PER_HOUR = 20;
-            int empHrs = 0;
-            int empWage = 0;
             int totHrs = 0;
             int totDays = 0;
 
-            for (int i = 0; i < 30; i++)
+            Random random = new Random();
+            int empCheck = random.Next(0, 2);
+
+            if (empCheck == IS_FULL_TIME) 
             {
-                Random random = new Random();
-                int empCheck = random.Next(0, 3);
-                switch (empCheck)
+                Console.WriteLine("full time employee");
+                while (totHrs < 100 && totDays < 20) 
                 {
-                    case 0:
-                        empHrs = 0;
-                         
-                        break;
-                    case 1:
-                        empHrs = 4;
-                        totHrs += empHrs;
-                        totDays += 1;
-                        break;
-                    case 2:
-                        empHrs = 8;
-                        totHrs += empHrs;
-                        totDays += 1;
-                        break;
+                    totDays += 1;
+                    totHrs += 8;
+                
                 }
-                if (totHrs <= 100 && totDays <= 20)
-                    empWage += empHrs * EMP_RATE_PER_HOUR;
-                else break;
+
+
             }
 
-            Console.WriteLine("Emp Wage: " + empWage);
+            else 
+            {
+                Console.WriteLine("part time employee");
+                while (totHrs < 100 && totDays < 20)
+                {
+                    totDays += 1;
+                    totHrs += 4;
+
+                }
+            }
+
+            return totHrs * EMP_RATE_PER_HOUR;
         }
     }
 }
