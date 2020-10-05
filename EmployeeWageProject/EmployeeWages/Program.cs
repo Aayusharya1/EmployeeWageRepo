@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation
 {
-    class Program
+    class EmployeeWageBuilder
     {
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
+
+        private string company;
+        private int EMP_RATE_PER_HOUR;
+        private int MAX_WORK_DAYS;
+        private int MAX_WORK_HOURS;
+
+        public EmployeeWageBuilder(string company, int empRatePerHr, int noOfWorkingDays, int maxWorkingHrs)
+        {
+            this.company = company;
+            EMP_RATE_PER_HOUR = empRatePerHr;
+            MAX_WORK_DAYS = noOfWorkingDays;
+            MAX_WORK_HOURS = maxWorkingHrs;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
