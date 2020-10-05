@@ -15,6 +15,7 @@ namespace EmployeeWageComputation
             empWageBuilder.AddCompanyEmpWage("Microsoft", 20, 20, 100);
             empWageBuilder.AddCompanyEmpWage("Amazon", 10, 25, 200);
             empWageBuilder.ComputeEmpWage();
+            Console.WriteLine("Total employee wage for Microsoft " + empWageBuilder.getTotalWage("Microsoft"));
         }
     }
 }
