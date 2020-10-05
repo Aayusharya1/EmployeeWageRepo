@@ -8,15 +8,13 @@ namespace EmployeeWageComputation
 {
     class Program
     {
-        public const int EMP_RATE_PER_HOUR = 20;
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
-        public const int MAX_WORK_DAYS = 20;
-        public const int MAX_WORK_HOURS = 100;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
-            Console.WriteLine("Employee wage: " + EmployeeWageComputation());
+            Console.WriteLine("Employee wage: " + EmployeeWageComputation("Microsoft", 20, 20, 100));
+            Console.WriteLine("Employee wage: " + EmployeeWageComputation("Amazon", 10, 25, 200));
         }
         static int EmployeeHours()
         {
@@ -37,7 +35,7 @@ namespace EmployeeWageComputation
             }
             return empHrs;
         }
-        static int EmployeeWageComputation()
+        static int EmployeeWageComputation(string company, int EMP_RATE_PER_HOUR, int MAX_WORK_DAYS, int MAX_WORK_HOURS)
         {
             int monthlySalary = 0;
             int totalWorkHrs = 0;
