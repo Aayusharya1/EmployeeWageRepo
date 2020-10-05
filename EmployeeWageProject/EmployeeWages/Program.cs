@@ -1,45 +1,56 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EmployeeWages
+namespace EmployeeWageComputation
 {
     class Program
     {
+        public const int EMP_RATE_PER_HOUR = 20;
+        public const int IS_FULL_TIME = 1;
+        public const int IS_PART_TIME = 2;
+        public const int MAX_WORK_DAYS = 20;
+        public const int MAX_WORK_HOURS = 100;
         static void Main(string[] args)
         {
-            int IS_FULL_TIME = 2;
-            int EMP_RATE_PER_HOUR = 20;
+            Console.WriteLine("Welcome to Employee Wage Computation Program");
+            Console.WriteLine("Employee wage: " + EmployeeWageComputation());
+        }
+        static int EmployeeHours()
+        {
             int empHrs = 0;
-            int empWage = 0;
-            int totHrs = 0;
-            int totDays = 0;
-
-            for (int i = 0; i < 30; i++)
+            Random random = new Random();
+            int empCheck = random.Next(0, 3);
+            switch (empCheck)
             {
-                Random random = new Random();
-                int empCheck = random.Next(0, 3);
-                switch (empCheck)
-                {
-                    case 0:
-                        empHrs = 0;
-                         
-                        break;
-                    case 1:
-                        empHrs = 4;
-                        totHrs += empHrs;
-                        totDays += 1;
-                        break;
-                    case 2:
-                        empHrs = 8;
-                        totHrs += empHrs;
-                        totDays += 1;
-                        break;
-                }
-                if (totHrs <= 100 && totDays <= 20)
-                    empWage += empHrs * EMP_RATE_PER_HOUR;
-                else break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
-
-            Console.WriteLine("Emp Wage: " + empWage);
+            return empHrs;
+        }
+        static int EmployeeWageComputation()
+        {
+            int monthlySalary = 0;
+            int totalWorkHrs = 0;
+            int totalWorkDays = 0;
+            while (totalWorkHrs <= MAX_WORK_HOURS && totalWorkDays < MAX_WORK_DAYS)
+            {
+                totalWorkDays++;
+                int empHrs = EmployeeHours();
+                totalWorkHrs += empHrs;
+                Console.WriteLine("Working day: " + totalWorkDays + " Working Hours: " + empHrs);
+            }
+            monthlySalary = totalWorkHrs * EMP_RATE_PER_HOUR;
+            return monthlySalary;
         }
     }
 }

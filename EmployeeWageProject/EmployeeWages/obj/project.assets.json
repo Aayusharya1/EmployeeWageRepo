@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aayush Arya\\source\\repos\\EmployeeWages\\EmployeeWages\\EmployeeWages.csproj",
+      "projectUniqueName": "C:\\Users\\Aayush Arya\\Desktop\\class assignments\\EmployeeWage\\EmployeeWageProject\\EmployeeWages\\EmployeeWages.csproj",
       "projectName": "EmployeeWages",
-      "projectPath": "C:\\Users\\Aayush Arya\\source\\repos\\EmployeeWages\\EmployeeWages\\EmployeeWages.csproj",
+      "projectPath": "C:\\Users\\Aayush Arya\\Desktop\\class assignments\\EmployeeWage\\EmployeeWageProject\\EmployeeWages\\EmployeeWages.csproj",
       "packagesPath": "C:\\Users\\Aayush Arya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aayush Arya\\source\\repos\\EmployeeWages\\EmployeeWages\\obj\\",
+      "outputPath": "C:\\Users\\Aayush Arya\\Desktop\\class assignments\\EmployeeWage\\EmployeeWageProject\\EmployeeWages\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aayush Arya\\AppData\\Roaming\\NuGet\\NuGet.Config",
